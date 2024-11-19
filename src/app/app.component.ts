@@ -9,5 +9,16 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'menu-frontend-angular';
+
+  value = 1;
+
+    increment = (): void =>{
+      this.value++
+    }
+
+    decrement = (): void =>{
+      this.value--
+    }
+
+
 }
