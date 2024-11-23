@@ -26,3 +26,4 @@ export class FormComponent {
     apellido: ['', Validators.required],
   });
 }
+ 
