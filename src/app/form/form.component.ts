@@ -29,6 +29,6 @@ export class FormComponent {
   }
 
   guardar = () => {
-    console.log(this.usuarioForm);
+    console.log(this.usuarioForm.value);
   };
 }
