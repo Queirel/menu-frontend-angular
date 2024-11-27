@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HijoComponent } from './hijo/hijo.component';
+import { ServiceService } from '../service.service';
+import { Product } from '../model/product.model';
 
 @Component({
   selector: 'app-calcu',
@@ -10,19 +12,27 @@ import { HijoComponent } from './hijo/hijo.component';
   styleUrl: './calcu.component.css',
 })
 export class CalcuComponent {
-mensajeParaElPadre: string = 'Mensaje desde el hijo'
-
-  mensajeInput! :string
-  mensajeDesdePadreParaElHijo: string = 'Mensaje desde el padre'
-
-  recibirMensajeDeHijo(mensaje:string){
-    this.mensajeParaElPadre = mensaje
+  
+  products!: Product[]
+  productInput!: string
+  priceInput!: number
+  
+  constructor(
+    private productService: ServiceService,
+  ){}
+  
+  ngOnInit(){
+    this.products = this.productService.productos
+  }
+  
+  agregar(){
+    const newProduct: Product = new Product(this.productInput, this.priceInput)
+    // this.products.push(newProduct)
+    this.productService.agregarProducto(newProduct)
   }
 
-  pasar(){
 
-    this.mensajeDesdePadreParaElHijo = this.mensajeInput
-    this.mensajeInput = ''
-    }
+
+
 
 }
