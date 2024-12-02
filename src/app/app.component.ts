@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { MainViewComponent } from './main-view/main-view.component';
-import { EgresosComponent } from './egresos/egresos.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [EgresosComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
