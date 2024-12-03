@@ -10,17 +10,22 @@ export const routes: Routes = [
             {
                 path: 'dashboard',
                 loadComponent: () => import('./business/dashboard/dashboard.component'),
-                canActivate: [AuthGuard]
+                // canActivate: [AuthGuard]
             },
             {
                 path: 'profile',
                 loadComponent: () => import('./business/profile/profile.component'),
-                canActivate: [AuthGuard]
+                // canActivate: [AuthGuard]
             },
             {
                 path: 'tables',
                 loadComponent: () => import('./business/tables/tables.component'),
-                canActivate: [AuthGuard]
+                // canActivate: [AuthGuard]
+            },
+            {
+                path: 'users',
+                loadComponent: () => import('./business/users/users.component'),
+                // canActivate: [AuthGuard]
             },
             {
                 path: '',

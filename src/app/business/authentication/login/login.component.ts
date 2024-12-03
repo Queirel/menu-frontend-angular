@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.component.css'
 })
 export default class LoginComponent {
-  user: string = '';
+  email: string = '';
   password: string = '';
 
   constructor(private authService: AuthService, private router: Router){
@@ -21,7 +21,7 @@ export default class LoginComponent {
   }
 
   login(): void {
-    this.authService.login(this.user, this.password).subscribe({
+    this.authService.login(this.email, this.password).subscribe({
       next: (response)=> {
         const token = response.token;
         const payload = JSON.parse(atob(token.split('.')[1]));
